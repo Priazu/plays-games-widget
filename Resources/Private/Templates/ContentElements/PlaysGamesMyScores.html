@@ -1,0 +1,101 @@
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:asset.css
+    identifier="plays-games-widget-scores"
+    href="EXT:plays_games_widget/Resources/Public/Css/plays-games-scores.css"
+/>
+
+<section class="pgames-score-module pgames-my-scores">
+
+    <header class="pgames-score-header">
+        <div class="pgames-score-heading">
+            <span class="pgames-score-eyebrow">
+                <f:translate key="LLL:EXT:plays_games_widget/Resources/Private/Language/locallang_db.xlf:frontend.myScores" />
+            </span>
+
+            <h2>
+                <f:translate key="LLL:EXT:plays_games_widget/Resources/Private/Language/locallang_db.xlf:frontend.myGames" />
+            </h2>
+        </div>
+
+        <span
+            class="pgames-trophy"
+            aria-hidden="true"
+        >
+            🎮
+        </span>
+    </header>
+
+    <f:if condition="{loggedIn}">
+        <f:then>
+
+            <f:if condition="{games}">
+                <f:then>
+
+                    <div class="pgames-my-scores-list">
+
+                        <f:for each="{games}" as="game">
+
+                            <article
+                                class="pgames-my-score-game"
+                                data-pgames-score-key="{game.score_key}"
+                            >
+                                <h3>{game.name}</h3>
+
+                                <div class="pgames-my-score-metrics">
+
+                                    <f:for
+                                        each="{game.metrics}"
+                                        as="metric"
+                                    >
+
+                                        <div class="pgames-my-score-metric">
+
+                                            <span class="pgames-my-score-label">
+                                                {metric.label}
+                                            </span>
+
+                                            <strong class="pgames-my-score-value">
+                                                {metric.value}
+                                            </strong>
+
+                                            <f:if condition="{metric.rank}">
+                                                <span class="pgames-my-score-rank">
+                                                    #{metric.rank}
+                                                </span>
+                                            </f:if>
+
+                                        </div>
+
+                                    </f:for>
+
+                                </div>
+                            </article>
+
+                        </f:for>
+
+                    </div>
+
+                </f:then>
+
+                <f:else>
+                    <p class="pgames-empty-state">
+                        <f:translate key="LLL:EXT:plays_games_widget/Resources/Private/Language/locallang_db.xlf:frontend.noPersonalScores" />
+                    </p>
+                </f:else>
+            </f:if>
+
+        </f:then>
+
+        <f:else>
+            <p class="pgames-empty-state">
+                <f:translate key="LLL:EXT:plays_games_widget/Resources/Private/Language/locallang_db.xlf:frontend.loginToSeeScores" />
+            </p>
+        </f:else>
+    </f:if>
+
+</section>
+
+</html>

@@ -1,0 +1,5 @@
+# cat=score; type=string; label=Score game restriction (advanced):Optional comma-separated score keys allowed for this TYPO3 installation. Leave empty to allow all published score games.
+scoreGames =
+
+# cat=score; type=boolean; label=Infinite score feed:Allow visitors to continue into the wider Plays Games catalogue after the selected score games.
+scoreInfinite = 0

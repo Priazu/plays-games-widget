@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"
+       xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en"
+        target-language="fr"
+        datatype="plaintext"
+        original="messages">
+    <body>
+
+      <trans-unit id="contentElement.title">
+        <source>Plays Games Widget</source>
+        <target>Plays Games Widget</target>
+      </trans-unit>
+
+      <trans-unit id="contentElement.description">
+        <source>Embed the Plays Games interactive HTML5 games feed.</source>
+        <target>Intégrez le flux interactif de jeux HTML5 Plays Games.</target>
+      </trans-unit>
+
+      <trans-unit id="field.width">
+        <source>Width (%)</source>
+        <target>Largeur (%)</target>
+      </trans-unit>
+
+      <trans-unit id="field.width.description">
+        <source>Widget width as a percentage of the available content area.</source>
+        <target>Largeur du widget en pourcentage de la zone de contenu disponible.</target>
+      </trans-unit>
+
+      <trans-unit id="field.height">
+        <source>Height (px)</source>
+        <target>Hauteur (px)</target>
+      </trans-unit>
+
+      <trans-unit id="field.radius">
+        <source>Corner radius (px)</source>
+        <target>Arrondi des coins (px)</target>
+      </trans-unit>
+
+      <trans-unit id="field.category">
+        <source>Game category</source>
+        <target>Catégorie de jeux</target>
+      </trans-unit>
+
+      <trans-unit id="category.all">
+        <source>All games</source>
+        <target>Tous les jeux</target>
+      </trans-unit>
+
+      <trans-unit id="category.action">
+        <source>Action</source>
+        <target>Action</target>
+      </trans-unit>
+
+      <trans-unit id="category.arcade">
+        <source>Arcade</source>
+        <target>Arcade</target>
+      </trans-unit>
+
+      <trans-unit id="category.casual">
+        <source>Casual</source>
+        <target>Casual</target>
+      </trans-unit>
+
+      <trans-unit id="category.puzzle">
+        <source>Puzzle</source>
+        <target>Puzzle</target>
+      </trans-unit>
+
+      <trans-unit id="category.racing">
+        <source>Racing</source>
+        <target>Course</target>
+      </trans-unit>
+
+      <trans-unit id="category.sports">
+        <source>Sports</source>
+        <target>Sports</target>
+      </trans-unit>
+
+      <trans-unit id="leaderboard.title">
+        <source>Plays Games Leaderboard</source>
+        <target>Classement Plays Games</target>
+      </trans-unit>
+
+      <trans-unit id="leaderboard.description">
+        <source>Display rankings for enabled Plays Games score titles.</source>
+        <target>Affiche le classement des jeux Plays Games avec scores activés.</target>
+      </trans-unit>
+
+      <trans-unit id="field.leaderboardLimit">
+        <source>Players to display</source>
+        <target>Joueurs à afficher</target>
+      </trans-unit>
+
+      <trans-unit id="field.leaderboardLimit.description">
+        <source>Maximum number of ranked players displayed for each game.</source>
+        <target>Nombre maximal de joueurs classés affichés pour chaque jeu.</target>
+      </trans-unit>
+
+      <trans-unit id="field.experience">
+        <source>Experience</source>
+        <target>Expérience</target>
+      </trans-unit>
+
+      <trans-unit id="field.experience.description">
+        <source>Choose the standard game feed or the Scores &amp; Progress experience.</source>
+        <target>Choisissez le flux de jeux standard ou l’expérience Scores &amp; Progression.</target>
+      </trans-unit>
+
+      <trans-unit id="experience.general">
+        <source>General games</source>
+        <target>Jeux généraux</target>
+      </trans-unit>
+
+      <trans-unit id="experience.score">
+        <source>Scores &amp; Progress</source>
+        <target>Scores &amp; Progression</target>
+      </trans-unit>
+
+      <trans-unit id="field.leaderboardGame">
+        <source>Leaderboard game</source>
+        <target>Jeu du classement</target>
+      </trans-unit>
+
+      <trans-unit id="field.leaderboardGame.description">
+        <source>Follow the active score game automatically or display one fixed game.</source>
+        <target>Suivez automatiquement le jeu de score actif ou affichez un jeu fixe.</target>
+      </trans-unit>
+
+      <trans-unit id="leaderboard.auto">
+        <source>Auto – Follow active score game</source>
+        <target>Auto – Suivre le jeu de score actif</target>
+      </trans-unit>
+
+      <trans-unit id="myScores.title">
+        <source>Plays Games My Scores</source>
+        <target>Mes scores Plays Games</target>
+      </trans-unit>
+
+      <trans-unit id="myScores.description">
+        <source>Display scores and rankings for the logged-in player.</source>
+        <target>Affiche les scores et classements du joueur connecté.</target>
+      </trans-unit>
+
+      <trans-unit id="frontend.leaderboard">
+        <source>Leaderboard</source>
+        <target>Classement</target>
+      </trans-unit>
+
+      <trans-unit id="frontend.player">
+        <source>player</source>
+        <target>joueur</target>
+      </trans-unit>
+
+      <trans-unit id="frontend.players">
+        <source>players</source>
+        <target>joueurs</target>
+      </trans-unit>
+
+      <trans-unit id="frontend.you">
+        <source>You</source>
+        <target>Vous</target>
+      </trans-unit>
+
+      <trans-unit id="frontend.yourPosition">
+        <source>Your position</source>
+        <target>Votre position</target>
+      </trans-unit>
+
+      <trans-unit id="frontend.noScores">
+        <source>No scores yet. Be the first to play!</source>
+        <target>Aucun score pour le moment. Soyez le premier à jouer !</target>
+      </trans-unit>
+
+      <trans-unit id="frontend.noScoreForGame">
+        <source>No score for this game.</source>
+        <target>Pas de score pour ce jeu.</target>
+      </trans-unit>
+
+      <trans-unit id="frontend.noEnabledGames">
+        <source>No enabled rankable score games.</source>
+        <target>Aucun jeu avec classement n’est actuellement activé.</target>
+      </trans-unit>
+
+      <trans-unit id="frontend.myScores">
+        <source>My Scores</source>
+        <target>Mes scores</target>
+      </trans-unit>
+
+      <trans-unit id="frontend.myGames">
+        <source>My Games</source>
+        <target>Mes jeux</target>
+      </trans-unit>
+
+      <trans-unit id="frontend.loginToSeeScores">
+        <source>Log in to see your scores and rankings.</source>
+        <target>Connectez-vous pour voir vos scores et vos classements.</target>
+      </trans-unit>
+
+      <trans-unit id="frontend.noPersonalScores">
+        <source>No scores yet. Play a score game to get started.</source>
+        <target>Aucun score pour le moment. Jouez à un jeu avec score pour commencer.</target>
+      </trans-unit>
+
+      <trans-unit id="field.scoreGames">
+        <source>Score games</source>
+        <target>Jeux avec score</target>
+      </trans-unit>
+
+      <trans-unit id="field.scoreGames.description">
+        <source>Select the score-enabled games available in this widget. Keep “All score-enabled games” selected to use the full catalogue.</source>
+        <target>Sélectionnez les jeux avec score disponibles dans ce widget. Conservez « Tous les jeux avec score » pour utiliser tout le catalogue.</target>
+      </trans-unit>
+
+      <trans-unit id="scoreGames.all">
+        <source>All score-enabled games</source>
+        <target>Tous les jeux avec score</target>
+      </trans-unit>
+
+
+    </body>
+  </file>
+</xliff>

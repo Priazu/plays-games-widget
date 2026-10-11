@@ -1,0 +1,29 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Cysquale\PlaysGamesWidget\:
+    resource: '../Classes/*'
+
+  Cysquale\PlaysGamesWidget\DataProcessing\WidgetConfigurationProcessor:
+    tags:
+      - name: 'data.processor'
+        identifier: 'plays-games-widget-config'
+
+  Cysquale\PlaysGamesWidget\DataProcessing\LeaderboardProcessor:
+    tags:
+      - name: 'data.processor'
+        identifier: 'plays-games-leaderboard'
+
+  Cysquale\PlaysGamesWidget\DataProcessing\MyScoresProcessor:
+    tags:
+      - name: 'data.processor'
+        identifier: 'plays-games-my-scores'
+
+  Cysquale\PlaysGamesWidget\Tca\LeaderboardGameItems:
+    public: true
+
+  Cysquale\PlaysGamesWidget\Tca\ScoreGameItems:
+    public: true

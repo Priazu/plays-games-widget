@@ -1,0 +1,32 @@
+tt_content.playsgameswidget = FLUIDTEMPLATE
+tt_content.playsgameswidget {
+    file = EXT:plays_games_widget/Resources/Private/Templates/ContentElements/PlaysGamesWidget.html
+
+    dataProcessing {
+        10 = plays-games-widget-config
+    }
+}
+
+tt_content.playsgamesleaderboard = COA_INT
+tt_content.playsgamesleaderboard {
+    10 = FLUIDTEMPLATE
+    10 {
+        file = EXT:plays_games_widget/Resources/Private/Templates/ContentElements/PlaysGamesLeaderboard.html
+
+        dataProcessing {
+            10 = plays-games-leaderboard
+        }
+    }
+}
+
+tt_content.playsgamesmyscores = COA_INT
+tt_content.playsgamesmyscores {
+    10 = FLUIDTEMPLATE
+    10 {
+        file = EXT:plays_games_widget/Resources/Private/Templates/ContentElements/PlaysGamesMyScores.html
+
+        dataProcessing {
+            10 = plays-games-my-scores
+        }
+    }
+}

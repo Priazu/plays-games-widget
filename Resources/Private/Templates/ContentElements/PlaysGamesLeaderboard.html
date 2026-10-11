@@ -1,0 +1,227 @@
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:asset.css
+    identifier="plays-games-widget-scores"
+    href="EXT:plays_games_widget/Resources/Public/Css/plays-games-scores.css"
+/>
+
+<f:asset.script
+    identifier="plays-games-widget-leaderboard"
+    src="EXT:plays_games_widget/Resources/Public/JavaScript/plays-games-leaderboard.js"
+/>
+
+<div
+    class="pgames-leaderboard-switcher"
+    data-pgames-leaderboard-mode="{f:if(condition: autoFollow, then: 'auto', else: 'fixed')}"
+>
+    <f:if condition="{boards}">
+        <f:then>
+
+            <f:if condition="{autoFollow}">
+                <section
+                    class="pgames-score-module pgames-leaderboard pgames-leaderboard-no-score"
+                    hidden
+                >
+                    <header class="pgames-score-header">
+                        <div class="pgames-score-heading">
+                            <span class="pgames-score-eyebrow">
+                                <f:translate key="LLL:EXT:plays_games_widget/Resources/Private/Language/locallang_db.xlf:frontend.leaderboard" />
+                            </span>
+
+                            <h2 class="pgames-no-score-game-name"></h2>
+
+                            <p class="pgames-score-subtitle">
+                                <f:translate key="LLL:EXT:plays_games_widget/Resources/Private/Language/locallang_db.xlf:frontend.noScoreForGame" />
+                            </p>
+                        </div>
+
+                        <span class="pgames-trophy" aria-hidden="true">
+                            🎮
+                        </span>
+                    </header>
+                </section>
+            </f:if>
+
+            <f:for each="{boards}" as="board" iteration="boardIterator">
+
+                <section
+                    class="pgames-score-module pgames-leaderboard pgames-leaderboard-board {f:if(condition: boardIterator.isFirst, then: 'is-active')}"
+                    data-pgames-score-key="{board.score_key}"
+                    data-pgames-game-id="{board.game_id}"
+                >
+                    <header class="pgames-score-header">
+
+                        <div class="pgames-score-heading">
+                            <span class="pgames-score-eyebrow">
+                                <f:translate key="LLL:EXT:plays_games_widget/Resources/Private/Language/locallang_db.xlf:frontend.leaderboard" />
+                            </span>
+
+                            <h2>{board.game_name}</h2>
+
+                            <p class="pgames-score-subtitle">
+                                {board.metric_label}
+
+                                <f:if condition="{board.total_players}">
+                                    · {board.total_players}
+                                    <f:if condition="{board.total_players} == 1">
+                                        <f:then>
+                                            <f:translate key="LLL:EXT:plays_games_widget/Resources/Private/Language/locallang_db.xlf:frontend.player" />
+                                        </f:then>
+                                        <f:else>
+                                            <f:translate key="LLL:EXT:plays_games_widget/Resources/Private/Language/locallang_db.xlf:frontend.players" />
+                                        </f:else>
+                                    </f:if>
+                                </f:if>
+                            </p>
+                        </div>
+
+                        <span
+                            class="pgames-trophy"
+                            aria-hidden="true"
+                        >
+                            🏆
+                        </span>
+
+                    </header>
+
+                    <f:if condition="{board.rows}">
+                        <f:then>
+
+                            <f:if condition="{board.show_podium}">
+                                <div class="pgames-podium">
+
+                                    <div class="pgames-podium-player pgames-podium-second">
+                                        <span class="pgames-podium-rank">🥈</span>
+                                        <span class="pgames-player-avatar">
+                                            {board.rows.1.initials}
+                                        </span>
+                                        <strong>{board.rows.1.name}</strong>
+                                        <span>{board.rows.1.value}</span>
+                                    </div>
+
+                                    <div class="pgames-podium-player pgames-podium-first">
+                                        <span class="pgames-podium-rank">🥇</span>
+                                        <span class="pgames-player-avatar">
+                                            {board.rows.0.initials}
+                                        </span>
+                                        <strong>{board.rows.0.name}</strong>
+                                        <span>{board.rows.0.value}</span>
+                                    </div>
+
+                                    <div class="pgames-podium-player pgames-podium-third">
+                                        <span class="pgames-podium-rank">🥉</span>
+                                        <span class="pgames-player-avatar">
+                                            {board.rows.2.initials}
+                                        </span>
+                                        <strong>{board.rows.2.name}</strong>
+                                        <span>{board.rows.2.value}</span>
+                                    </div>
+
+                                </div>
+                            </f:if>
+
+                            <ol class="pgames-leaderboard-list {f:if(condition: board.show_podium, then: 'has-podium')}">
+
+                                <f:for
+                                    each="{board.rows}"
+                                    as="row"
+                                >
+
+                                    <li class="pgames-leaderboard-row {f:if(condition: row.is_current, then: 'is-current')}">
+
+                                        <span class="pgames-rank">
+                                            #{row.rank}
+                                        </span>
+
+                                        <span
+                                            class="pgames-player-avatar"
+                                            aria-hidden="true"
+                                        >
+                                            {row.initials}
+                                        </span>
+
+                                        <span class="pgames-player-name">
+                                            {row.name}
+                                        </span>
+
+                                        <f:if condition="{row.is_current}">
+                                            <span class="pgames-you-badge">
+                                                <f:translate key="LLL:EXT:plays_games_widget/Resources/Private/Language/locallang_db.xlf:frontend.you" />
+                                            </span>
+                                        </f:if>
+
+                                        <strong class="pgames-score-value">
+                                            {row.value}
+                                        </strong>
+
+                                    </li>
+
+                                </f:for>
+
+                            </ol>
+
+                            <f:if condition="{board.current_entry}">
+                                <div class="pgames-current-position">
+
+                                    <span class="pgames-current-position-label">
+                                        <f:translate key="LLL:EXT:plays_games_widget/Resources/Private/Language/locallang_db.xlf:frontend.yourPosition" />
+                                    </span>
+
+                                    <div class="pgames-leaderboard-row is-current">
+
+                                        <span class="pgames-rank">
+                                            #{board.current_entry.rank}
+                                        </span>
+
+                                        <span
+                                            class="pgames-player-avatar"
+                                            aria-hidden="true"
+                                        >
+                                            {board.current_entry.initials}
+                                        </span>
+
+                                        <span class="pgames-player-name">
+                                            {board.current_entry.name}
+                                        </span>
+
+                                        <span class="pgames-you-badge">
+                                            <f:translate key="LLL:EXT:plays_games_widget/Resources/Private/Language/locallang_db.xlf:frontend.you" />
+                                        </span>
+
+                                        <strong class="pgames-score-value">
+                                            {board.current_entry.value}
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+                            </f:if>
+
+                        </f:then>
+
+                        <f:else>
+                            <p class="pgames-empty-state">
+                                <f:translate key="LLL:EXT:plays_games_widget/Resources/Private/Language/locallang_db.xlf:frontend.noScores" />
+                            </p>
+                        </f:else>
+                    </f:if>
+
+                </section>
+
+            </f:for>
+
+        </f:then>
+
+        <f:else>
+            <div class="pgames-score-module">
+                <p class="pgames-empty-state">
+                    <f:translate key="LLL:EXT:plays_games_widget/Resources/Private/Language/locallang_db.xlf:frontend.noEnabledGames" />
+                </p>
+            </div>
+        </f:else>
+    </f:if>
+</div>
+
+</html>

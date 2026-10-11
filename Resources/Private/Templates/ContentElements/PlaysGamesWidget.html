@@ -1,0 +1,36 @@
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:asset.script
+    identifier="plays-games-widget-scores"
+    src="EXT:plays_games_widget/Resources/Public/JavaScript/plays-games-scores.js"
+/>
+
+<div
+    class="plays-games-widget"
+    data-pgames-score="{f:if(condition: scoreEnabled, then: '1', else: '0')}"
+    style="
+        width:{data.tx_playsgameswidget_width}%;
+        max-width:100%;
+        overflow:hidden;
+        border-radius:{data.tx_playsgameswidget_radius}px;
+    "
+>
+    <iframe
+        src="{iframeUrl}"
+        width="100%"
+        height="{data.tx_playsgameswidget_height}"
+        style="
+            display:block;
+            width:100%;
+            border:0;
+            border-radius:{data.tx_playsgameswidget_radius}px;
+        "
+        loading="lazy"
+        allow="fullscreen; autoplay; gamepad"
+        allowfullscreen>
+    </iframe>
+</div>
+
+</html>
